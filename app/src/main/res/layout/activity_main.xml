@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        app:cardBackgroundColor="@color/purple_500"
+        app:cardBackgroundColor="@color/primaryColor"
         android:elevation="16dp"
         >
         <LinearLayout
@@ -45,7 +45,7 @@
 
             android:padding="5sp"
             android:textSize="24sp"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/white"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
             android:text="Card No:"
             android:padding="5sp"
             android:textSize="24sp"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/white"
             />
         <TextView
             android:id="@+id/cardNoText"
@@ -66,7 +66,7 @@
 
             android:padding="5sp"
             android:textSize="24sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             />
             <TextView
                 android:id="@+id/cardTypeText"
@@ -76,7 +76,7 @@
 
                 android:padding="5sp"
                 android:textSize="24sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 />
         </LinearLayout>
         </LinearLayout>
@@ -114,7 +114,7 @@
         android:visibility="gone"
         android:text="SUBMIT "
         android:textColor="@color/white"
-        app:backgroundTint="@color/purple_200"
+        app:backgroundTint="@color/primaryColor"
         />
 
 

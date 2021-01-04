@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622127257648",
+    "firebase_url": "https://erationqueue-default-rtdb.firebaseio.com",
+    "project_id": "erationqueue",
+    "storage_bucket": "erationqueue.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622127257648:android:06fe052a0bc76f7ddeb5f5",
+        "android_client_info": {
+          "package_name": "com.example.e_rationqueue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622127257648-kjabjp3datilrc8622id5crsd30c9ok0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.e_rationqueue",
+            "certificate_hash": "d1a65e2cd480aa2e5aaa1e69ca6b95b87b92ee0d"
+          }
+        },
+        {
+          "client_id": "622127257648-4nr8ohta8te0u2r11e2k01m8t7htlqoh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH519e2f4zAXH-seNwZcBIlXQ352RTcaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622127257648-4nr8ohta8te0u2r11e2k01m8t7htlqoh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

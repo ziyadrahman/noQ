@@ -82,6 +82,27 @@
 
 
             />
+        <RadioButton
+            android:id="@+id/aayOn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+
+            android:text="AAY"
+            app:buttonCompat="@null"
+            android:layout_marginEnd="5dp"
+            />
+
+        <RadioButton
+            android:id="@+id/nonpriorityOn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+
+            android:text="Non-Priority"
+
+
+            />
     </RadioGroup>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/mobileNumberInputLayout"
@@ -109,7 +130,7 @@
         android:layout_gravity="end"
         android:text="send "
         android:textColor="@color/white"
-        app:backgroundTint="@color/purple_200"
+        app:backgroundTint="@color/primaryColor"
         />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/OTPInputLayout"
@@ -137,7 +158,7 @@
         android:layout_gravity="end"
         android:text="SUBMIT "
         android:textColor="@color/white"
-        app:backgroundTint="@color/purple_200"
+        app:backgroundTint="@color/primaryColor"
         />
 
 

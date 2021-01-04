@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
     TextView cardTypeText;
     String userId;
 
+    String currentWeek;
+    String currentMonth;
+    int dayOfTheWeek;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +73,26 @@ public class MainActivity extends AppCompatActivity {
         addValuesToTimeSlotsMap();
 
         final Calendar calendar = Calendar.getInstance();
+
+        currentWeek=String.valueOf(calendar.get(Calendar.WEEK_OF_MONTH));
+        currentMonth=String.valueOf(calendar.get(Calendar.MONTH));
+        dayOfTheWeek=calendar.get(Calendar.DAY_OF_WEEK);
+
         int day=calendar.get(Calendar.DATE);
         int month=calendar.get(Calendar.MONTH);
         int year=calendar.get(Calendar.YEAR);
         Date date=new GregorianCalendar(year,month,day+1).getTime();
+
         todayDate=dateToString(date);
-//        loadBookedTimeSlotsDb();
-//        loadAvailableTimeSlots();
-        loadTodayBooked();
+        if (dayOfTheWeek!=1) {
+            loadCurrentWeekBooked();
+        }
+        else
+        {
+            availableSlotsTextView.setVisibility(View.INVISIBLE);
+            messageTextView.setText("SUNDAY HOLIDAY");
+            messageTextView.setVisibility(View.VISIBLE);
+        }
         setData();
     }
 
@@ -136,9 +152,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d("todayDate",dateToString);
         return dateToString;
     }
-    public void loadTodayBooked(){
-        DatabaseReference todayBooked=database.getReference("todayBooked");
-        todayBooked.child(todayDate).child(userId).
+    public void loadCurrentWeekBooked(){
+        DatabaseReference todayBooked=database.getReference("currentWeekBooked");
+
+        todayBooked.child(currentMonth).child(currentWeek).child(userId).
                 addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -263,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
     {
         bookBtn.setOnClickListener(v -> {
             addBookedTimeSlot();
-            addTodayBooked();
+            currentWeekBooked();
             goneBookBtn();
             availableSlotsTextView.setVisibility(View.INVISIBLE);
             messageTextView.setText("Time slot booked at:"+pickedtimeSlot);
@@ -274,9 +291,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void addTodayBooked() {
-        DatabaseReference todayBooked=database.getReference("todayBooked");
-        todayBooked.child(todayDate).child(userId).setValue(pickedtimeSlot);
+    private void currentWeekBooked() {
+        DatabaseReference todayBooked=database.getReference("currentWeekBooked");
+        todayBooked.child(currentMonth).child(currentWeek).child(userId).setValue(pickedtimeSlot);
     }
 
     private void addBookedTimeSlot() {

@@ -36,7 +36,7 @@ public class authentication extends AppCompatActivity {
     TextInputEditText otp;
 
     RadioGroup radioGroup;
-    RadioButton apl,bpl;
+    RadioButton apl,bpl,aayOn,nonPriorityOn;
 
     MaterialButton sendOtp,sumbit;
 
@@ -60,6 +60,8 @@ public class authentication extends AppCompatActivity {
         radioGroup=findViewById(R.id.radioGroup);
         apl=findViewById(R.id.aplOn);
         bpl=findViewById(R.id.bplOn);
+        aayOn=findViewById(R.id.aayOn);
+        nonPriorityOn=findViewById(R.id.nonpriorityOn);
         mAuth=FirebaseAuth.getInstance();
         rationCardNo=findViewById(R.id.cardNumberTextInputEditText);
         customerName=findViewById(R.id.customerNameTextInputEditText);
@@ -199,6 +201,12 @@ public class authentication extends AppCompatActivity {
                         break;
                     case  R.id.bplOn:
                         cardType="bpl";
+                        break;
+                    case  R.id.aayOn:
+                        cardType="ayy";
+                        break;
+                    case  R.id.nonpriorityOn:
+                        cardType="non-priority";
                         break;
                 }
             }
